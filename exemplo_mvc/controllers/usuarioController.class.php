@@ -10,5 +10,5 @@
                 //verificar no banco de dados se existe esse usuário 
             }
         }
-    }
+    }  //fim
 ?>

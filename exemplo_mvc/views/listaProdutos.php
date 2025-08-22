@@ -27,7 +27,7 @@
                         <a href='index.php?classe=produtoController&metodo=excluir&id={$dados->id_produto'>Excluir</a>&nbsp; &nbsp;
                         </td>
                     </tr>";      
-            }
+            }  //fim
         ?>
     </table>
 </body>

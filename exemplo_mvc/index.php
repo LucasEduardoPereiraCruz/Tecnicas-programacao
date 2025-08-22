@@ -15,5 +15,5 @@
         require_once "controllers/inicioController.class.php";
         $obj = new inicioController();
         $obj -> inicio();  
-    }
+    } //fim
 ?>

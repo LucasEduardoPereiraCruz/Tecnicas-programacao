@@ -20,5 +20,5 @@
             //mostrar uma visão 
             require_once "views/listaProdutos.php";
         }
-    }
+    }  //fim
 ?>

@@ -33,5 +33,6 @@
         {
             $this->senha = $senha;
         }
-    }//Fim da classe.
+    }//Fim da classe. 
+    
 ?>
