@@ -1,14 +1,14 @@
 <?php
-    require_once "cabecalho.php";
+	require_once "cabecalho.php";
 ?>
-<div class= "content">
-<div class= "container">
-<h1 style="margin-top:60px; margin-bottom:20px;">Usuário</h1>    
+<div class="content">
+<div class="container">
+<h1 style="margin-top:60px;margin-bottom:20px;">Usuário</h1>
 <form class="row g-3" action="#" method="post">
   <div class="col-md-6">
     <label for="nome" class="form-label">Nome</label>
     <input type="text" class="form-control" id="nome" name="nome">
-  </div>  
+  </div>
   <div class="col-md-6">
     <label for="email" class="form-label">Email</label>
     <input type="email" class="form-control" id="email" name="email">
@@ -26,7 +26,7 @@
   <div class="col-md-6 text-danger"><?php echo $msg[2];?></div>
   <div class="col-md-6 text-danger"><?php echo $msg[3];?></div>
   <div class="col-12">
-    <button type="submit" class="btn btn-primary">Entrar</button>
+    <button type="submit" class="btn btn-primary">Enviar</button>
   </div>
 </form>
 </div>

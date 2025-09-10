@@ -9,22 +9,22 @@
             return $this->id_usuario;
         }
 
-        public function getNome($nome)
+        public function getNome()
         {
             return $this->nome;
         }
 
-        public function getEmail($email)
+        public function getEmail()
         {
             return $this->email;
         }
 
-        public function getSenha($senha)
+        public function getSenha()
         {
             return $this->senha;
         }
 
-        public function getCelular($celular)
+        public function getCelular()
         {
             return $this->celular;
         }
