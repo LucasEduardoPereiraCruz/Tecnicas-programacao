@@ -30,7 +30,7 @@
 
         public function login($usuario)
         {   
-            $sql = "SELECT id_usuario, email, senha FROM usuarios WHERE email = ?";
+            $sql = "SELECT id_usuario, email, senha, nome FROM usuarios WHERE email = ?";
             try
             {
                 $stm = $this->db->prepare($sql);
@@ -49,7 +49,7 @@
 
         public function verificar_email($usuario)
         {
-            $sql = "SELECT email FROM usuarios WHERE email = ?";
+            $sql = "SELECT email, nome, id_usuario FROM usuarios WHERE email = ?";
             try
             {
                 $stm = $this->db->prepare($sql);

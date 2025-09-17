@@ -2,6 +2,7 @@
     require_once "models/Conexao.class.php";
     require_once "models/usuarioDAO.class.php";
     require_once "models/usuarios.class.php";
+    require_once "config.php";
     class usuarioController
     {
         public function login()
@@ -37,9 +38,20 @@
                             //verificar se a senha corresponde
                             if(password_verify($_POST['senha'], $retorno[0]->senha))
                             {
-                                //logar
-                                $msg[2] = "Login com sucesso!!";
+
+                                
+                                //logado
+                                if(!isset($_SESSION)){
+                                session_start();
+                                }
+                        
+                                $_SESSION["nome"] = $retorno[0] ->nome;
+                                $_SESSION["id"] = $retorno[0] ->id_usuario;
+                                $_SESSION["email"] = $retorno[0] ->email;
+                                header("location:index.php");
+
                             }
+
                             else
                             {
                                 //credenciais erradas
@@ -111,6 +123,70 @@
                 }
             }
             require_once "views/form_usuario.php";
+        }//Fim do inserir
+
+        public function logout()
+        {
+            if(!isset($_SESSION))
+            {
+                session_start();
+            }
+            $_SESSION = array();
+            session_destroy();
+            header("location:index.php");
+        }//fim do logout
+
+        public function esqueceu_senha()
+        {
+    $msg = "";
+    $form_email = "Será enviado um email para recuperar a senha";
+    if ($_POST) {
+        if (empty($_POST["email"])) {
+            $msg = "Preencha o e-mail";
+        } else {
+            // Verificar se é um email de algum usuário do sistema.
+            $usuario = new usuarios(email: $_POST["email"]);
+            $usuarioDAO = new usuarioDAO();
+            $retorno = $usuarioDAO->verificar_email($usuario);
+            if (is_array($retorno)) {
+                if (count($retorno) > 0) {
+                    // Enviar email
+                    $assunto = "Recuperação de senha - meu pet sumiu";
+
+                    $link = "index.php?controle=usuarioController&metodo=trocar_senha&id=" . base64_encode($retorno[0]->id_usuario);
+
+                    $nomeDestino = $retorno[0]->nome;
+                    $destino = $retorno[0]->email;
+
+                    $remetente = "luc2@gmail.com";
+                    $nomeRemetente = "meu pet sumiu";
+
+                    $mensagem = "<h2>Senhor(a) " . $nomeDestino . "</h2><br />
+                    <p>Recebemos a solicitação de recuperação de senha.
+                    Caso não tenha sido requerida por você, desconsidere essa mensagem. Caso contrário, clique no link abaixo.</p>
+                    <a href='" . $link . "'>Clique aqui</a><br /><br />
+                    <p>Atenciosamente,<br />" . $nomeRemetente . "</p>";
+
+                    // Agora fora da string, chame a função
+                    $ret = sendMail($assunto, $mensagem, $remetente, $nomeRemetente, $destino, $nomeDestino);
+
+                    if ($ret) {
+                        $msg_email = "Foi enviado um email de recuperação de senha.";
+                    } else {
+                        $msg = "Erro ao enviar o e-mail. Tente novamente mais tarde.";
+                    }
+
+                } else {
+                    $msg = "Verifique o e-mail informado";
+                }
+            } else {
+                $msg = "Verifique o e-mail informado";
+            }
         }
+    }
+
+        require_once "views/form_email.php";    
+}
+
     } //Fim da classe.
 ?>
