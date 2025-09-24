@@ -4,7 +4,7 @@
         public function __construct(private int $id_usuario = 0, private string $nome = "", 
         private string $email = "", private string $senha = "", private string $celular = ""){}
 
-        public function getId_usuario($id_usuario)
+        public function getId_usuario()
         {
             return $this->id_usuario;
         }

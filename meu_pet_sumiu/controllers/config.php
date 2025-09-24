@@ -19,8 +19,8 @@ $mail->Host = 'smtp.gmail.com';
 //$mail->SMTPDebug = 1;  // debugging: 1 = errors and messages, 2 = messages only
 $mail->SMTPSecure = 'ssl'; // secure transfer enabled REQUIRED for GMail
 $mail->Port = 465; 
-$mail->Username = 'seu_email';
-$mail->Password = 'sua_senha';
+$mail->Username = 'luc2@gmail.com';
+$mail->Password = '123';
 /*
 HOTMAIL
 Host: smtp.live.com
