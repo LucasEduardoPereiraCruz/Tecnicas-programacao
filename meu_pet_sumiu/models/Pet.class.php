@@ -1,4 +1,5 @@
 <?php
+	
     class Pet {
         public function __construct(
             private int    $id_pet = 0,
@@ -13,7 +14,7 @@
             private string $cor = "",
             private string $observacoes = "",
             private string $situacao = "",
-            private Usuarios $usuario = new Usuarios() ) {} 
+            private  $usuario = null ) {} 
 
             public function getId_pet()
         {
@@ -35,6 +36,11 @@
             return $this->raca;
         }
 
+		public function getPorte()
+        {
+            return $this->porte;
+        }
+
         public function getLocal()
         {
             return $this->local;
@@ -50,7 +56,7 @@
             return $this->imagem;
         }
 
-        public function getCorOlhos()
+        public function getCor_Olhos()
         {
             return $this->cor_olhos;
         }
@@ -75,79 +81,6 @@
             return $this->usuario;
         }
 
-
-        //SET
-        public function setId_pet($id_pet)
-        {
-            return $this->id_pet = $id_pet;
-        }
-
-        public function setNome($nome)
-        {
-            return $this->nome = $nome;
-        }
-
-       public function setIdade($idade)
-        {
-            return $this->idade = $idade;
-        }
-
-
-        public function setRaca($raca)
-        {
-            return $this->raca = $raca;
-        }
-
-
-        public function setLocal($local)
-        {
-            return $this->local = $local;
-        }
-
-
-        public function setData($data)
-        {
-            return $this->data = $data;
-        }
-
-
-        public function setImagem($imagem)
-        {
-            return $this->imagem = $imagem;
-        }
-
-
-        public function setCorOlhos($cor_olhos)
-        {
-            return $this->cor_olhos = $cor_olhos;
-        }
-
-
-        public function setCor($cor)
-        {
-            return $this->cor = $cor;
-        }
-
-
-        public function setObservacoes($observacoes)
-        {
-            return $this->observacoes = $observacoes;
-        }
-
-
-        public function setSituacao($situacao)
-        {
-            return $this->situacao = $situacao;
-        }
-
-
-        public function setUsuario($usuario)
-        {
-            return $this->usuario = $usuario;
-        }
-
     }
-
-    //fazer o get e o set - feito!! 
-    
+ 
 ?>

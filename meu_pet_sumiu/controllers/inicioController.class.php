@@ -1,10 +1,9 @@
 <?php
-    class inicioController
-    {
-        public function inicio()
-        {
-            require_once "views/menu.php";
-        }
-    }
-    //fim
-?>  
+	class inicioController
+	{
+		public function inicio()
+		{
+			require_once "Views/menu.php";
+		}
+	}
+?>
