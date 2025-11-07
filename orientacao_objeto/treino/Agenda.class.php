@@ -1,7 +1,7 @@
 <?php
     class Agenda 
     {
-        public function __construct(private string $data = "", private $cliente = null, string $horario = "", string $status = "", Servico $servico = null, string $agenda = null, Prestador $prestador = null)
+        public function __construct(private string $data = "", private array $itens = [], private $cliente = null, string $horario = "", string $status = "", Servico $servico = null, string $agenda = null, Prestador $prestador = null)
         {
             $this->itens[] = new Itens ($horario, $status, $servico, $agenda, $prestador);
         }
