@@ -1,7 +1,7 @@
 <?php
     abstract class Pessoa
     {
-        public function __construct(protected string $nome = "", protected string $celular){}
+        public function __construct(protected string $nome = "", protected string $celular = ""){}
 
         //PROTECTED: só a classe filha consegue pegar as coisas da herança
 
@@ -29,3 +29,4 @@
         }
     } // fim da classe 
 ?>
+

@@ -7,7 +7,7 @@
     require_once "Contratado.class.php";
 
 
-    $cliente = new Cliente ("001.123.456-11", "Lucas Eduardo e Ana Beatriz ");
+    $cliente = new Cliente ("001.123.456-11 | 002.321.654-10", "Lucas Eduardo e Ana Beatriz ");
     $contratado = new Contratado ("00.000.000/0001-00", "Festa infantil");
     $decoracao = new Decoracao("Tema princesa");
     $festa = new Festa ("07/11/2025", "15/11/2025", 500.00, $cliente, $contratado, $decoracao);
@@ -39,6 +39,7 @@
     // Esse fluxo abaixo da certo pq o GetTelefones é herdado de pessoa para Cliente e Contratado (Cliente extends Pessoa)
     $telsClienteFesta = $festa->getCliente()->getTelefones();
     
+    //Essa linha é usada quando você tem um array de objetos
     foreach ($telsClienteFesta as $tel) {
         // Percorre o array e chama os getters do OBJETO Telefones ($tel)
         echo "({$tel->getDdd()}) {$tel->getNumero()} | ";
@@ -55,9 +56,9 @@
     // Esse fluxo abaixo da certo pq o GetTelefones é herdado de pessoa para Cliente e Contratado (Cliente extends Pessoa)
     $telsContratadoFesta = $festa->getContratado()->getTelefones();
     
-    //O as serve para apelido!
+    //Essa linha é usada quando você tem um array de objetos
     foreach ($telsContratadoFesta as $tel) {
-        echo "({$tel->getDdd()}) {$tel->getNumero()} | ";
+        echo "({$tel->getDdd()}) {$tel->getNumero()}  ";
     }
     echo "<br>";
 ?> 

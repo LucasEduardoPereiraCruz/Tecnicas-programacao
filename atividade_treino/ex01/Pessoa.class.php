@@ -1,9 +1,8 @@
 <?php
     abstract class Pessoa 
     {
-        private array $telefones = [];
-
-        public function __construct(protected string $nome = "") {}
+    
+        public function __construct(protected string $nome = "", private array $telefones = []) {}
 
         public function getNome()
         {
@@ -20,7 +19,7 @@
             return $this->telefones;
         }
 
-        public function setTelefones(array $telefones)
+        public function setTelefones($telefones)
         {
             $this->telefones = $telefones;
         }

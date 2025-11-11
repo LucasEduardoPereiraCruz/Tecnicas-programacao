@@ -18,7 +18,7 @@
             return $this -> telefones;
         }
 
-        public function setTelefones(array $telefones)
+        public function setTelefones($telefones)
         {
             $this->telefones = $telefones;
         }

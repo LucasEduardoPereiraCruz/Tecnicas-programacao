@@ -25,9 +25,10 @@
         }
 
         // O método SET agora recebe um objeto Loja PRONTO (Agregação)
-        public function setLoja(Loja $loja)
+        public function setLoja($loja)
         {
             $this -> lojas[] = $loja;
         }
     } // Fim da classe 
 ?>
+

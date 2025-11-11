@@ -61,10 +61,11 @@ $receita->setAvaliacao($avaliacao);
     {
         // Avaliação (Parte da Receita)
         echo "<br> Nota: {$avaliacao->getNota()} <br>";
+        echo "Comida degustada: {$receita -> getNome()} <br>";
         
         // Avaliador (Associação da Avaliacao)
         echo "Avaliador: {$avaliacao->getAvaliador()->getNome()} <br>";
-        echo "CPF: {$avaliacao->getAvaliador()->getcpf()} <br>";
+        echo "CPF: {$avaliacao->getAvaliador()->getCpf()} <br>";
         echo "Telefones: <br>";
 
         // Telefones do Avaliador (Composição: Pessoa -> Telefone)

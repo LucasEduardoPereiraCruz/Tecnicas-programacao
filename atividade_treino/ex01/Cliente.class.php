@@ -12,14 +12,10 @@
             return $this->cpf;
         }
 
-        public function getNome()
+        public function setCpf($cpf)
         {
-            return $this->nome;
+            $this->cpf = $cpf;
         }
 
-        public function setNome($nome)
-        {
-            $this->nome = $nome;
-        }
     } // fim da classe 
 ?>

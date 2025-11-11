@@ -13,7 +13,7 @@
     $prestador = new Prestador(especialidade:"Pintura predial", nome: "João da Silva", celular: "(14)99999999");
     $prestador2 = new Prestador(especialidade:"Encanamento", nome: "João da Silva", celular: "(14)99999998");
 
-    $cliente = new Cliente("088.765.743-21", "Maria da Silva");
+    $cliente = new Cliente("088.765.743-21", "Maria da Silva", "(14)999998888");
 
     $agenda = new Agenda("05/11/2025", [] ,$cliente, "19:30", "Ativo", $servico, null, $prestador);
 
@@ -37,4 +37,3 @@
     //echo "</pre>";
 
 ?>
-

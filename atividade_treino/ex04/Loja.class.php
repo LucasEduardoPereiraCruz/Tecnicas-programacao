@@ -1,7 +1,6 @@
 <?php
     class Loja 
     {
-
         // 2. Construtor limpo com apenas atributos próprios:
         public function __construct(private int $lotes = 0, private string $numero = "", private array $proprietarios = [], private $condominio = null)
         {
@@ -36,7 +35,7 @@
         }
 
         // 3. Método SET para adicionar à coleção (conforme seu estilo):
-        public function setProprietario(Proprietario $proprietario)
+        public function setProprietario($proprietario)
         {
             $this->proprietarios[] = $proprietario;
         }
@@ -47,7 +46,7 @@
             return $this->condominio;
         }
 
-        public function setCondominio(Condominio $condominio)
+        public function setCondominio($condominio)
         {
             $this->condominio = $condominio;
         }
