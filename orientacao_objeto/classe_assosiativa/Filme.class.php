@@ -2,7 +2,7 @@
     class Filme 
     {
         public function __construct(
-           private string $titulo = "",){ }
+           private string $titulo = "", private string $numero){ }
 
         public function geTitulo(){
             return $this->titulo;

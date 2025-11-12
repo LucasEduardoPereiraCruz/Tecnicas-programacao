@@ -1,7 +1,7 @@
 <?php
     class Condominio 
     {
-        public function __construct(private string $data_geracao = "", private float $valor_final = 0.0, private string $data_pagamento = ""){}
+        public function __construct(private string $data_geracao = "", private float $valor_final = 0.0, private string $data_pagamento = "", private array $loja = []){}
 
         public function getDataGeracao()
         {
@@ -18,6 +18,11 @@
             return $this -> data_pagamento;
         }
 
+        public function getLojas()
+        {
+            return $this -> loja;
+        }
+
         public function setDataGeracao($data_geracao)
         {
             $this->data_geracao = $data_geracao;
@@ -32,6 +37,10 @@
         {
             $this->data_pagamento = $data_pagamento;
         }
+
+        public function setLoja($loja)
+        {
+            $this->loja[] = $loja;
+        }
     } // Fim da classe 
 ?>
-

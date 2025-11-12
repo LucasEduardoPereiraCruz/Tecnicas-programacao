@@ -47,4 +47,3 @@ foreach($shopping->getLojas() as $loja_obj)
     }
     echo "<br>";
 }
-

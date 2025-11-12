@@ -19,7 +19,7 @@
 
         public function setNome($nome)
         {
-            $this->nome = $celular;
+            $this->nome = $nome;
         }
 
         public function setCelular($celular)
