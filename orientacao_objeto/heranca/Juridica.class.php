@@ -12,7 +12,7 @@
         }
         public function setCnpj($cnpj)
         {
-            $this->cpf = $cnpj;
+            $this->cnpj = $cnpj;
         }
         public function validarCNPJ($cnpj)
         {

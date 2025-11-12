@@ -18,5 +18,15 @@
         {
             echo "Validar CPF";
         }
+
+        public function inserir()
+        {
+            echo "Inserir CPF";
+        }
+
+        public function alterar()
+        {
+            echo "Alterar CPF";
+        }
     }
 ?>
